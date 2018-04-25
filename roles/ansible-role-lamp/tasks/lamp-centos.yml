@@ -23,7 +23,9 @@
   - name: Activar modulo de apache
     apache2_module: state=present name=userdir
   - name: reiniciando httpd
-    shell: service httpd restart
+    systemd:
+      name: httpd
+      state: restart
   - name: Iniciar httpd al inicio
     shell: chkconfig httpd on
 #  - name: Configurar iptables
