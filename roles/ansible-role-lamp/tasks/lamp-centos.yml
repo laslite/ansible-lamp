@@ -25,7 +25,7 @@
   - name: reiniciando httpd
     systemd:
       name: httpd
-      state: restart
+      state: started
   - name: Iniciar httpd al inicio
     shell: chkconfig httpd on
 #  - name: Configurar iptables
